@@ -42,9 +42,12 @@
     border:none; font-size: 16px;
     position: relative; top:2px;
     }
-    .page-num{ 
-      margin-top:35px ; font-size: 16px; justify-content: center;
-      width: 100%; display: flex;
+    .page-num{ margin-top:35px;
+      width:100%;
+      font-size: 16px; 
+      display: flex;
+      justify-content: center;
+      
     }
     .page-num li{width:36px; height:35px; border:1px solid #989898;
     margin:0 3px; line-height:32px; box-sizing: border-box;}
@@ -54,82 +57,41 @@
     .page-num .last{background: url(images/paging_last.png) no-repeat; border:none; }
     .write a {width:120px; height:50px; float:right; 
     border:2px solid black; line-height: 50px;}
-    #right_fixed{
-      border: 1px solid #111;
-      width: 118px;
-      position: fixed;
-      right: 0;
-      top: 169px;
+
+
+    #right_fixed {width:118px; border:1px solid #111;
+     position: fixed; right:0; top:169px;
     }
-    #right_fixed .chatting{
-      width: 118px; 
-      height: 118px;
-      border-bottom: 1px solid #111;
-      box-sizing: border-box; padding-top: 30px;
+    #right_fixed .chatting {width:118px; height:118px; border-bottom:1px solid #111;
+    box-sizing: border-box; padding-top: 30px;
     }
-    #right_fixed .chatting div:nth-child(1){
-      width: 38px;
-      height: 40px;
-      margin: 0 auto ;
-      background: url('imges/ic_speechbubble.svg') no-repeat;
-      background-size: cover;
+    #right_fixed .chatting div:nth-child(1){width:38px; height:40px; margin:0 auto;
+    background: url(images/ic_speechbubble.svg) no-repeat; background-size: cover;  }
+    #right_fixed .chatting div:nth-child(2){width:100%; text-align: center;
+    font-size: 13px; color:#111; letter-spacing: -0.26px;}
+    
+    #right_fixed .ai_chatting {width:118px; height:118px; border-bottom:1px solid #111;
+      box-sizing: border-box; padding-top: 30px; }
+    #right_fixed .ai_chatting div:nth-child(1){width:38px; height:40px; margin:0 auto;
+      background: url(images/ico_chatai_big.svg) no-repeat; background-size: cover; 
+      }
+    #right_fixed .ai_chatting div:nth-child(2){width:100%; text-align: center;
+    font-size: 13px; color:#111; letter-spacing: -0.26px;}
+    #right_fixed .items{ font-size: 13px; text-align: center; letter-spacing: -1px;
+      color:#333; background: #f3f3f3;
+      width:118px; height:45px; 
     }
-    #right_fixed .chatting div:nth-child(2){
-      width: 100%;
-      text-align: center;
-      font-size: 13px;
-      color: #111;
-      letter-spacing: -0.26px;
-    }
-    #right_fixed .ai_chatting{
-      width: 118px; 
-      height: 118px;
-      border-bottom: 1px solid black;
-      box-sizing: border-box; padding-top: 30px;
-    }
-    #right_fixed .ai_chatting div:nth-child(1){
-      width: 38px;
-      height: 40px;
-      margin: 0 auto 0;
-      background: url('imges/ico_chatai_big.svg') no-repeat;
-      background-size: cover;
-    }
-    #right_fixed .ai_chatting div:nth-child(2){
-      width: 100%;
-      text-align: center;
-      font-size: 13px;
-      color: #111;
-      letter-spacing: -0.26px;
-    }
-    #right_fixed .items{
-      font-size: 13px;
-      text-align: center;
-      letter-spacing: -1px;
-      color: #333;
-      background: #f3f3f3;
-      width: 118px;
-      height: 45px;
-    }
-    #right_fixed .items span{
-      display: inline-block;
-      box-sizing: border-box;
-      margin-top: 19px;
-      margin-left: 7px;
-      background: url(imges/z01.png)no-repeat;
+    #right_fixed .items span{ display: inline-block; box-sizing: border-box;
+      margin-top: 19px; margin-left:7px;
+      width:12px; height:8px;
+      background: url(images/spr_com.png) no-repeat;
       background-position: -80px -68px;
-      width: 12px;
-      height: 8px;
     }
-    #right_fixed .top{
-      height: 30px;
-      text-align: center;
-      font-size: 13px;
-      color: #333;
-      letter-spacing: -1px;
-      background: #f3f3f3;
-      border-top: 1px solid #ddd;
-      line-height: 30px;
+    #right_fixed .top{height:30px; text-align: center;
+      font-size: 13px; color:#333; letter-spacing: -1px; background: #f3f3f3;
+      border-top:1px solid #ddd; line-height: 30px;
     }
+
   </style>
 </head>
 <body>
@@ -235,8 +197,8 @@
     <div class="write"><a href="#">쓰기</a></div>
     
   </section>
-  <div id="right_fixed"></div>
 
+  <div id="right_fixed">
     <div class="chatting">
       <div></div>
       <div>채팅상담</div>
@@ -245,8 +207,10 @@
       <div></div>
       <div>AI 채팅상담</div>
     </div>
-    <div class="items">최근 본 상품(0)<span></span></div>
+    <div class="items" >최근 본 상품(0) <span></span></div>
     <div class="top">▲ TOP</div>
   </div>
+
+
 </body>
 </html>
