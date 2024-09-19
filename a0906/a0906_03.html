@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*solid-실선 dotted-점선 dashed-선으로된 점선*/
+    div{height: 200px; 
+      border: 10px solid black;
+      /*
+      border-width: 5px;
+      border-style: dashed;
+      border-color: black;
+      border-radius: 20px;
+      */
+      background: yellow; margin-bottom: 30px;}
+    .c01{width: 1000px; }
+    .c02{width: 50%;}
+    .c03{width: 200px; height: 200px; border-radius: 100px;
+      background: url('imges/j03.jpg') no-repeat;
+      background-size: 100%; }
+      .c03:hover{
+        background-size:150%;
+        background-position: -65px -25px;
+        cursor: pointer;
+        box-shadow: 50px 5px 60px 10px gray;
+      }
+  </style>
+</head>
+<body>
+  <div class="c01">1</div>
+  <div class="c02">2</div>
+  <div class="c03">3</div>
+  
+</body>
+</html>

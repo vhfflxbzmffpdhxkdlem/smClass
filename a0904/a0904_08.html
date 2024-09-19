@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <title>Document</title>
+  <style>
+    #pwTxt{font-weight:700;}
+    .on{color:blue}
+    .off{color:red}
+  </style>
+</head>
+<body>
+  <div>
+    <from action="" name="frm" method="get">
+      <script>
+        function pwCheck(){
+          var pw=document.getElementById("pw").value;
+          var pw2=document.getElementById("pw2").value;
+          if(pw==pw2){
+            document.getElementsByName("pwTxt").innerText = "비밀번호가 일치합니다.";
+            document.getElementById("pwTxt").classList.remove("off");
+            document.getElementById("pwTxt").classList.add("on");
+          }else{
+            document.getElementById("pwTxt").innerText = "비밀번호가 일치하지 않습니다.";
+            document.getElementById("pwTxt").classList.remove("on");
+            document.getElementById("pwTxt").classList.add("off");
+          }
+
+        }
+      </script>
+      <label>비밀번호</label>
+      <input type="password" name="pw" id="pw"><br/>
+      
+      <lable>비밀번호 확인</lable>
+      <input tpye="password" name="pw2" id="pw2" onkeyup="pwCheck()">
+      <span id="pwTxt"></span> <br/>
+      <label>주소</label>
+      <input type="text" name="zipcode" id="zipcode">
+      <button type="button" onclick="addBtn()">우편번호</button> <br/>
+      
+      <input type="text" name="address1" id="address1">
+      <input type="text" name="address2" id="address2">
+
+
+    </from>
+  </div>
+  <script>
+    function addBtn(){
+      new daum.Postcode({
+        oncomplete: function(data) {
+          document.getElementById("zipcode").value = data.zonecode;
+          document.getElementById("address1").value = data.address;
+        }
+      }).open();
+    }
+  </script>
+</body>
+</html>

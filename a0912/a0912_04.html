@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    div{
+      width: 100px;
+      height: 100px; 
+      background: skyblue;
+      border: 1px solid black;
+      /*
+      animation-name: chg-back;
+      animation-duration: 3s;
+      animation-direction: alternate;         nomal, alternate: 양방향
+      animation-iteration-count: infinite;    infinite: 무한대
+      animation-timing-function: ease-in;
+      animation-delay: 1s;
+      */
+      
+      animation: chg-back 3s alternate infinite ease-in 1s;
+    }
+    @keyframes chg-back{
+      from{
+        background: skyblue;
+        border: 2px solid black;
+      }
+      to{
+        background: blue;
+        border: 3px solid red;
+        border-radius: 50%;
+      }
+    }
+    @keyframes rotate{
+      from{
+        transform:perspective(120px) rotateX(0deg);
+      }
+      to{
+        transform:perspective(120px) rotateX(180deg);
+      }
+    } 
+    
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
