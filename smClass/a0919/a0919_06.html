@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box; font-size: 14px; color: #454545;}
+    header{background: #0aaf6b; position: relative; padding: 15px 20px 15px 40px;
+      border-bottom: 3px solid #e5e5e5;width: 610px; height: 60px;
+      }
+    header div{background: url('/a0919/images/bullet-h1.png')10px 50% no-repeat;
+       width: 25px; height: 25px;   position: absolute;top: 15px; left: 10px; }
+    header h1{font-size: 18px; color: #fff; font-weight: 700;}
+    header a{position: absolute; display: block;width: 25px; height: 25px; top: 15px; 
+      right: 15px; background: url('/a0919/images/btn-close.png')50% 50% no-repeat;
+      text-indent: -9999px;}
+    .main{width: 610px; height: 400px;
+      padding: 20px;}
+    .main .text{width: 560px; height:150px; 
+      background: #f8f8f8; margin-bottom: 25px; padding: 25px; 
+    }
+    .main .text span{color: #454545; line-height: 24px;
+      letter-spacing: -0.03em; font-size: 16px; font-weight: inherit;
+    }
+    .main .from{width: 558px; border: 1px solid #e8e8e8; 
+      margin: -15px 0 30px 0;  padding: 25px; position: relative;
+    }
+    #length{width: 60px; height: 27px; margin-right: 5px; padding: 0.5px;
+      text-align: center; border: 1px solid #ddd;
+      vertical-align: middle;   
+    }
+    #weight{width: 60px; height: 27px; margin-right: 5px; padding: 0.5px;
+      text-align: center; border: 1px solid #ddd;
+      vertical-align: middle;   
+    }
+    .main .from label{font-size: 15px; font-weight: 700; margin-right: 12px;}
+    .main .from span{font-size: 16px;}
+    .main .from .dash{font-size: 16px; color: #b7b7b7; margin: 0 15px;}
+    .main .from .compute{position: absolute; right: 25px;}
+    #btnCalc{width: 70px; height: 27px; color: #fff; font-weight: 700; 
+      vertical-align: top; cursor: pointer; background: #0aaf6b;}
+    #reset{width: 70px; height: 27px; color: #fff; font-weight: 700; 
+      vertical-align: top; cursor: pointer; background: #656565;}
+    .main .clearfix{margin: 10px 0 18px 0; border-collapse: separate; 
+      list-style: none; letter-spacing: -0.03em; width: 558px; height: 24px;}
+    #resultText{width: 80%; color: #eb413a;}
+    #bmiNumber{width: 80%; color: #eb413a;}
+    .main .clearfix dt{width: 20%; float: left; display: inline-block;font-size: 14px; }
+    .main .from ul{list-style: none;}
+    .main .from li{font-size: 13px; font-weight: 700;}
+    .main .from li label{display: inline-block; width: 21%; margin-right: 12px;}
+    .main .from li .dv1{width: 18.5%; display: inline-block;}
+    .main .from li .dv2{width: 14.5%; display: inline-block;}
+    .main .from .clearfix .low-weight{width: 25%; background: #329ae3;
+      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
+    .main .from .clearfix .regular{width: 20%; background: #95c520;
+      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
+    .main .from .clearfix .overweight{width: 18%; background: #ee942a;
+      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
+    .main .from .clearfix .obesity{width: 30%; background: #f15232;
+      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+    </div>
+      <h1>나의 체질랑지수(BMI)</h1>
+      <a href="#"></a>
+  </header>
+  <div class="main">
+    <div class="text">
+      <span>체질량지수는 자신의 몸무게(kg)를 키의 제곱(m)으로 나눈 값입니다.
+        <br/>
+			체질량지수는 근육량, 유전적 원인, 다른 개인적 차이를 반영하지 못하는 단점이 있음에도 불구하고
+      <br/>
+			조사자들이나 의료인들이 가장 많이 쓰는 방법 중 하나입니다.
+      </span>
+    </div>
+    <div class="from">
+      <from id="bmiCheckFrom" name="bmiCheckFrom">
+        <lable for>신장</lable>
+        <input type="text" id="length" name="length">
+        <span>cm</span>
+        <span class="dash">/</span>
+        <lable for>체중</lable>
+        <input type="text" id="weight" name="weight">
+        <span>kg</span>
+        <span class="compute">
+          <input type="button" id="btnCalc" value="계산">
+          <input type="reset" id="reset" value="초기화">
+        </span>
+      </from>
+      <dl class="clearfix">
+        <dt>비만도 결과</dt>
+        <dd id="resultText">정상입니다.</dd>
+        <dt>BMI 지수</dt>
+        <dd id="bmiNumber">18.51</dd>
+      </dl>
+      <ul>
+        <li>
+          <label>BMI</label>
+          <label class="dv1">18.5</label>
+          <label class="dv2">23</label>
+          <label>25.00</label>
+          <ul class="clearfix">
+            <li class="low-weight">저체중</li>
+            <li class="regular">정상</li>
+            <li class="overweight">과체중</li>
+            <li class="obesity">비만</li>
+          </ul>
+          <label>체중</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>
