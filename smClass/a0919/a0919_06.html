@@ -3,70 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>나의 체질량지수(BMI)</title>
-  <style>
-    *{margin: 0; padding: 0; box-sizing: border-box; font-size: 14px; color: #454545;}
-    header{background: #0aaf6b; position: relative; padding: 15px 20px 15px 40px;
-      border-bottom: 3px solid #e5e5e5;width: 610px; height: 60px;
+  <script>
+    function calbtn(){
+      //alert("계산버튼 클릭")
+      var length = document.getElementById("length").value;
+      var weight = document.getElementById("weight").value;
+      var length2 = length/100
+      // 수식 : 체중 / (키(M)*키(M)
+      var bmi = weight / (length2 * length2);
+      // toFixed : 원하는 소수점 자리수를 입력하면 그 자리수 만큼 보여줌
+      var bmi2 = bmi.toFixed(2);
+      // BMI 지수 칸에 데이터값 넣기
+      document.getElementById("bmiNumber").innerText = bmi2
+
+      var resultText = "";  // 문자형 데이터
+      // BMI 지수 판별
+      if(bmi2 >= 25){
+        resultText = "비만입니다.";
+      }else if(bmi2 >= 23){
+        resultText = "과체중입니다."
+      }else if(bmi2 >= 18.5){
+        resultText = "정상입니다."
+      }else{
+        resultText = "저체중입니다."
       }
-    header div{background: url('/a0919/images/bullet-h1.png')10px 50% no-repeat;
-       width: 25px; height: 25px;   position: absolute;top: 15px; left: 10px; }
-    header h1{font-size: 18px; color: #fff; font-weight: 700;}
-    header a{position: absolute; display: block;width: 25px; height: 25px; top: 15px; 
-      right: 15px; background: url('/a0919/images/btn-close.png')50% 50% no-repeat;
-      text-indent: -9999px;}
-    .main{width: 610px; height: 400px;
-      padding: 20px;}
-    .main .text{width: 560px; height:150px; 
-      background: #f8f8f8; margin-bottom: 25px; padding: 25px; 
+      document.getElementById("resultText").innerText = resultText;
+      
     }
-    .main .text span{color: #454545; line-height: 24px;
-      letter-spacing: -0.03em; font-size: 16px; font-weight: inherit;
-    }
-    .main .from{width: 558px; border: 1px solid #e8e8e8; 
-      margin: -15px 0 30px 0;  padding: 25px; position: relative;
-    }
-    #length{width: 60px; height: 27px; margin-right: 5px; padding: 0.5px;
-      text-align: center; border: 1px solid #ddd;
-      vertical-align: middle;   
-    }
-    #weight{width: 60px; height: 27px; margin-right: 5px; padding: 0.5px;
-      text-align: center; border: 1px solid #ddd;
-      vertical-align: middle;   
-    }
-    .main .from label{font-size: 15px; font-weight: 700; margin-right: 12px;}
-    .main .from span{font-size: 16px;}
-    .main .from .dash{font-size: 16px; color: #b7b7b7; margin: 0 15px;}
-    .main .from .compute{position: absolute; right: 25px;}
-    #btnCalc{width: 70px; height: 27px; color: #fff; font-weight: 700; 
-      vertical-align: top; cursor: pointer; background: #0aaf6b;}
-    #reset{width: 70px; height: 27px; color: #fff; font-weight: 700; 
-      vertical-align: top; cursor: pointer; background: #656565;}
-    .main .clearfix{margin: 10px 0 18px 0; border-collapse: separate; 
-      list-style: none; letter-spacing: -0.03em; width: 558px; height: 24px;}
-    #resultText{width: 80%; color: #eb413a;}
-    #bmiNumber{width: 80%; color: #eb413a;}
-    .main .clearfix dt{width: 20%; float: left; display: inline-block;font-size: 14px; }
-    .main .from ul{list-style: none;}
-    .main .from li{font-size: 13px; font-weight: 700;}
-    .main .from li label{display: inline-block; width: 21%; margin-right: 12px;}
-    .main .from li .dv1{width: 18.5%; display: inline-block;}
-    .main .from li .dv2{width: 14.5%; display: inline-block;}
-    .main .from .clearfix .low-weight{width: 25%; background: #329ae3;
-      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
-    .main .from .clearfix .regular{width: 20%; background: #95c520;
-      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
-    .main .from .clearfix .overweight{width: 18%; background: #ee942a;
-      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
-    .main .from .clearfix .obesity{width: 30%; background: #f15232;
-      float: left; height: 35px; color: #fff; line-height: 35px; text-align: center;}
-    h3{margin-bottom: 15px; padding-left: 23px; font-size: 18px;
-      color: #222; font-weight: 700;
-      background: url('/a0919/images/bullet-h3g.png')0 50% no-repeat;}
-    h4{color: #0aaf6b; margin-bottom: 5px; font-size: 14px;
-      font-weight: 700;}
-    p{margin-bottom: 15px; font-size: 14px; line-height: 18px;}
-  </style>
+  </script>
 </head>
 <body>
   <header>
@@ -94,22 +60,22 @@
         <input type="text" id="weight" name="weight">
         <span>kg</span>
         <span class="compute">
-          <input type="button" id="btnCalc" value="계산">
+          <input type="button" onclick="calbtn()" id="btnCalc" value="계산">
           <input type="reset" id="reset" value="초기화">
         </span>
       </from>
       <dl class="clearfix">
         <dt>비만도 결과</dt>
-        <dd id="resultText">정상입니다.</dd>
+        <dd id="resultText"></dd>
         <dt>BMI 지수</dt>
-        <dd id="bmiNumber">18.51</dd>
+        <dd id="bmiNumber"></dd>
       </dl>
       <ul>
         <li>
           <label>BMI</label>
           <label class="dv1">18.5</label>
           <label class="dv2">23</label>
-          <label>25.00</label>
+          <label>25</label>
           <ul class="clearfix">
             <li class="low-weight">저체중</li>
             <li class="regular">정상</li>

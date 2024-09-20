@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function nbtn(event){
+      var num = document.getElementById("num").value;
+
+      // (num>=0 && num<=9)
+
+      if( (num>=0 && num<=9) || ((num>='A' && num<='z')||( num>='A' && num<='Z'))){
+        alert("숫자 또는 영문자 입니다.")
+      }else{
+        alert("숫자 또는 영문자만 입력이 가능합니다. 다시입력하세요.")
+        document.getElementById("num").value = ""
+        document.getElementById("num").focus()
+      }
+    }
+  </script>
+</head>
+<body>
+  <from>
+    <label>숫자</label>
+    <input type="text" name="num" id="num"> 
+    <br>
+    <input type="button" onclick="nbtn(event)" value="확인">
+    
+  </from>
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  <script>
+
+    // alert, consol.log, confirm, prompt, document.write
+    var result = confirm("로그아웃을 하시계습니다.?")
+    if(result){
+      document.write("로그아웃이 되었습니다.")
+    }else{
+      document.write("로그아웃이 취소되었습니다.")
+    }
+
+
+    // // 국어점수, 영어점수, 수학점수를 입력받아, 평균60점을 넘으면 합격, 아니면 불합격 출력하시오.
+    // var a = Number(prompt("국어점수를 입력해주세요"));
+    // var b = Number(prompt("영어점수를 입력해주세요"));
+    // var c = Number(prompt("수학점수를 입력해주세요"));
+    // var avg =((a+b+c)/3).toFixed(2)
+    // document.write("평균점수 :"+avg+"<br>")
+    // if(((a+b+c)/3)>=60){
+    //   document.write("합격입니다.")
+    // }else{
+    //   document.write("불합격입니다.")
+    // }
+
+    // //삼항식으로 숫자를 입력받아, 짝수인지, 홀수인지 출력하시오
+    // var num = prompt("숫자를 입력하세요")
+    // var result = num%2 == 0?"짝수입니다.":"홀수입니다."
+    // document.write(result)
+
+    // if(num%2 ==0){
+    //   document.write("짝수입니다.")
+    // }else{
+    //   document.write("홀수입니다.")
+    // }
+
+    // var num = prompt("숫자를 입력하세요");
+    // if(num<500){
+    //   document.write("500보다 작은수 입니다.<br>");
+    // }else{
+    //   document.write("500보다 큰수 입니다.<br>");
+    // }
+    // document.write("프로그램을 종료합니다.<br>")
+  </script>
+  
+</body>
+</html>
