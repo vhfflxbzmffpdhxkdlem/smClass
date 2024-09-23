@@ -14,7 +14,7 @@ section table{width:1200px; margin:0 auto; text-align: center;
   border-top:2px solid black; border-bottom:2px solid black; 
 }
 section td:nth-child(2){ text-align: left; padding-left:10px; }
-.wrapper{width:380px; height:40px; margin:0 auto 30px;}
+.wrapper{width:380px; height:200px; margin:0 auto 30px;}
 .wrapper select{width:80px; height:40px; border:1px solid #666;
   background: url(../images/search-box-select.png) no-repeat 90%;
   appearance: none; padding:5px; box-sizing: border-box;
@@ -27,6 +27,7 @@ section td:nth-child(2){ text-align: left; padding-left:10px; }
 border:none; font-size: 16px;
 position: relative; top:2px;
 }
+.frmInput{width: 800px; height: ;}
 .page-num{ margin-top:35px;
   width:100%;
   font-size: 16px; 

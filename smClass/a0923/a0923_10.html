@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll 객체</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    #wrap{width:2000px; height: 3000px; border: 1px solid black;
+    background: url(images/a01.jpg);}
+    #d_wrap{position: fixed; }
+    #txt{width: 200px; height: 100px; border: 1px solid black;
+    background: yellow; font-size: 30px; text-align: center;}
+    #img{width: 300px; height: 300px; border: 1px solid black;
+    background: url(images/a01.jpg);}
+  </style>
+  <script>
+    window.addEventListener('scroll',function(){
+    if(window.scrollY > 1999){
+      document.getElementById("wrap").style.backgroundImage = "url('images/a02.jpg')"
+    }else(window.scrollY > 999){
+      document.getElementById("wrap").style.backgroundImage = "url('images/a03.jpg')"
+    }// }else if(window.scrollY > 499){
+    //   document.getElementById("wrap").style.backgroundImage = "url('images/a04.jpg')"
+    // }else{
+    //   document.getElementById("wrap").style.backgroundImage = "url('images/nw01.jpg')"
+    // }
+    document.getElementById("txt").innerText = window.scrollX
+  })
+
+
+
+    // document.getElementById("b01").addEventListener("click",function(){
+    //   alert("asd")
+    // })
+
+
+
+    // function fiveBtn(){
+    //   window.scrollTo({top:500, behavior:"smooth"});
+    // }
+    // function tenBtn(){
+    //   window.scrollTo({top:1000, behavior:"smooth"});
+    // }
+    // function twoBtn(){
+    //   window.scrollTo({top:2000, behavior:"smooth"});
+    // }
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="d_wrap">
+      <div id="txt">000</div>
+      <button id="b01" onclick="btn1()">500 이동</button>
+      <button id="b02" type="button" onclick="btn2()">1000 이동</button>
+      <button id="b03" type="button" onclick="btn3()">2000 이동</button>
+      <div id="img"></div>
+    </div>
+  </div>
+  <script>
+    //window 이벤트 실행문
+    window.addEventListener("scroll",function(){
+      window.scrollY;
+      window.scrollX;
+      console.log(window.scrollY)
+      console.log(window.scrollX)
+      document.getElementById("txt").innerText = window.scrollY
+
+      if(window.scrollY > 2000){
+        window.getElementById("img").style.backgroundImage = "url('images/a02')"
+      }else if(window.scrollY > 1000){
+        window.getElementById("img").style.backgroundImage = "url('images/a03')"
+      }else if(window.scrollY > 500){
+        window.getElementById("img").style.backgroundImage = "url('images/a04')"
+      }else{
+         window.getElementById("img").style.backgroundImage = "url('images/a01')"
+      }
+    })
+    
+    // document.getElementById("b01").addEventListener("click",function(){
+    //   window.scrollTo({top:500, behavior:"smooth"})
+    // })
+    // document.getElementById("b02").addEventListener("click",function(){
+    //   window.scrollTo({top:1000, behavior:"smooth"})
+    // })
+    // document.getElementById("b03").addEventListener("click",function(){
+    //   window.scrollTo({top:2000, behavior:"smooth"})
+    // })
+    
+    
+    function btn1(){
+      window/scrollTo({top:500,behavior:"smooth"})
+    }
+    function btn2(){
+      window/scrollTo({top:1000,behavior:"smooth"})
+    }
+    function btn3(){
+      window/scrollTo({top:2000,behavior:"smooth"})
+    }
+
+
+
+    // 이벤트 실행문
+    //  document.getElementById("b01").addEventListener("click",function(){
+    //   alert("asd")
+    // })
+  </script>
+</body>
+</html>
